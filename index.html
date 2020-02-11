@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animacija</title>
+<style>
+    body {
+        margin: 200px auto;
+        padding: 0;
+        background: #050210;
+
+    }
+    #gradient {
+        position: relative;
+        margin: 0 auto;
+        width: 300px;
+        height: 300px;        
+        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+        border-radius: 50%;
+        animation: animacija 1s linear infinite;
+        }
+        @keyframes animacija {
+         0% 
+         {transform: rotate(0deg);}
+
+         100% 
+         {transform: rotate(360deg);}
+
+        }
+    .blur {
+        position: absolute;
+        margin: auto;
+        width: 100%;
+        height: 100%;        
+        background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+        border-radius: 50%;
+    }
+    #blur_1 {
+        filter: blur(10px);
+    }
+    #blur_1 {
+        filter: blur(20px);
+    }
+    #blur_1 {
+        filter: blur(30px);
+    }
+
+    #blur_4 {
+        filter: blur(40px);
+    }
+    #centar {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+        border-radius: 50%;
+        background: black;
+     
+    }
+    #centar::after {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+        border-radius: 50%;
+        background: rgba(6, 0, 61, 0.411);
+        animation: animacija_centar 1.5s ease infinite;
+    
+    }
+    @keyframes animacija_centar {
+        0% {
+            transform: scale(0, 0);
+            }
+        100% {
+            transform: scale(1.3, 1.3);
+        }
+    }
+</style>
+
+</head>
+
+<body>
+    <div id=gradient>
+        <div id=blur_1 class="blur"></div>
+        <div id=blur_2 class="blur"></div>
+        <div id=blur_3 class="blur"></div>
+        <div id=blur_4 class="blur"></div>
+        <div id=centar></div>
+    </div>
+</body>
+</html>
